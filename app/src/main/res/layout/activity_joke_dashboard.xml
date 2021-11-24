@@ -10,11 +10,81 @@
         android:id="@+id/rv_joke_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cb_category_christmas" />
+        app:layout_constraintTop_toBottomOf="@id/tbg_category" />
+
+    <com.nex3z.togglebuttongroup.MultiSelectToggleGroup
+        android:id="@+id/tbg_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="6dp"
+        app:tbgFlow="true"
+        app:tbgChildSpacing="auto"
+        app:tbgChildSpacingForLastRow="align"
+        app:tbgRowSpacing="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_any"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Any"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_programming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Programming"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_misc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Misc"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Dark"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_pun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Pun"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_spooky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Spooky"
+            />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/lt_christmas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tbgMarkerColor="@color/purple_500"
+            android:text="Christmas"
+            />
+    </com.nex3z.togglebuttongroup.MultiSelectToggleGroup>
 
     <com.getbase.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_refresh"
@@ -26,138 +96,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <CheckBox
-        android:id="@+id/cb_category_any"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Any"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/cb_category_spooky"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/cb_category_programming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Programming"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/cb_category_christmas"
-        app:layout_constraintStart_toEndOf="@id/cb_category_any" />
-
-    <CheckBox
-        android:id="@+id/cb_category_misc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Misc"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cb_category_programming" />
-
-    <CheckBox
-        android:id="@+id/cb_category_dark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Dark"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cb_category_misc" />
-
-    <CheckBox
-        android:id="@+id/cb_category_pun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Pun"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cb_category_dark" />
-
-    <CheckBox
-        android:id="@+id/cb_category_spooky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Spooky"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toBottomOf="@id/cb_category_any"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <CheckBox
-        android:id="@+id/cb_category_christmas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_filter_button"
-        android:button="@null"
-        android:text="Christmas"
-        android:textSize="12sp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingVertical="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/selector_filter_button_text_color"
-        app:layout_constraintTop_toBottomOf="@id/cb_category_programming"
-        app:layout_constraintStart_toEndOf="@id/cb_category_spooky" />
 </androidx.constraintlayout.widget.ConstraintLayout>

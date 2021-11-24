@@ -2,6 +2,7 @@ package com.app.jokeappv2.ui.home
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.jokeappv2.base.BaseActivity
@@ -33,69 +34,36 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
 
         setupRecyclerView()
 
-
-
         binding.apply {
             fabRefresh.setOnClickListener {
                 presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
             }
-//            for (category in applicationContext.resources.getStringArray(R.array.joke_categories)) {
-//                cbCategories
-//            }
-            cbCategoryAny.setOnCheckedChangeListener { buttonView, isChecked ->
-                isAnySelected = isChecked
-                setSelectedCategoryName(
-                    Constant.JokeCategory.ANY,
-                    isChecked
-                )
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
-            }
-            cbCategoryProgramming.setOnCheckedChangeListener { buttonView, isChecked ->
-                setSelectedCategoryName(
-                    Constant.JokeCategory.PROGRAMMING,
-                    isChecked
-                )
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
-            }
-            cbCategoryMisc.setOnCheckedChangeListener { buttonView, isChecked ->
 
-                setSelectedCategoryName(
-                    Constant.JokeCategory.MISC,
-                    isChecked
-                )
+            tbgCategory.setOnCheckedChangeListener { group, checkedId, isChecked ->
                 presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
-            }
-            cbCategoryDark.setOnCheckedChangeListener { buttonView, isChecked ->
-
-                setSelectedCategoryName(
-                    Constant.JokeCategory.DARK,
-                    isChecked
-                )
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
-            }
-            cbCategoryPun.setOnCheckedChangeListener { buttonView, isChecked ->
-
-                setSelectedCategoryName(
-                    Constant.JokeCategory.PUN,
-                    isChecked
-                )
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
-            }
-            cbCategorySpooky.setOnCheckedChangeListener { buttonView, isChecked ->
-
-                setSelectedCategoryName(
-                    Constant.JokeCategory.SPOOKY,
-                    isChecked
-                )
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
-            }
-            cbCategoryChristmas.setOnCheckedChangeListener { buttonView, isChecked ->
-
-                setSelectedCategoryName(
-                    Constant.JokeCategory.CHRISTMAS,
-                    isChecked
-                )
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
+                when (checkedId) {
+                    R.id.lt_any -> {
+                        setSelectedCategoryName(Constant.JokeCategory.ANY, isChecked)
+                    }
+                    R.id.lt_programming -> {
+                        setSelectedCategoryName(Constant.JokeCategory.PROGRAMMING, isChecked)
+                    }
+                    R.id.lt_misc -> {
+                        setSelectedCategoryName(Constant.JokeCategory.MISC, isChecked)
+                    }
+                    R.id.lt_dark -> {
+                        setSelectedCategoryName(Constant.JokeCategory.DARK, isChecked)
+                    }
+                    R.id.lt_pun -> {
+                        setSelectedCategoryName(Constant.JokeCategory.PUN, isChecked)
+                    }
+                    R.id.lt_spooky -> {
+                        setSelectedCategoryName(Constant.JokeCategory.SPOOKY, isChecked)
+                    }
+                    R.id.lt_christmas -> {
+                        setSelectedCategoryName(Constant.JokeCategory.CHRISTMAS, isChecked)
+                    }
+                }
             }
         }
     }
