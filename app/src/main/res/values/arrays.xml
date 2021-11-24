@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="joke_categories">
+        <item>Programming</item>
+        <item>Misc</item>
+        <item>Dark</item>
+        <item>Pun</item>
+        <item>Spooky</item>
+        <item>Christmas</item>
+    </string-array>
+</resources>
