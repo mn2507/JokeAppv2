@@ -23,7 +23,6 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
     private var mSection: Section? = null
     private var mAdapter: GroupieAdapter? = null
     private val filteredCategory: MutableList<String> = ArrayList()
-    private var isAnySelected: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +37,9 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
             fabRefresh.setOnClickListener {
                 presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
             }
-
+            // Check Any by default
+            tbgCategory.check(R.id.lt_any)
             tbgCategory.setOnCheckedChangeListener { group, checkedId, isChecked ->
-                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
                 when (checkedId) {
                     R.id.lt_any -> {
                         setSelectedCategoryName(Constant.JokeCategory.ANY, isChecked)
@@ -64,6 +63,10 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
                         setSelectedCategoryName(Constant.JokeCategory.CHRISTMAS, isChecked)
                     }
                 }
+                if (checkedId != R.id.lt_any) {
+                    tbgCategory.check(R.id.lt_any,false)
+                }
+                presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
             }
         }
     }
