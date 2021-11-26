@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/jokeDashboardActivity">
+
+    <activity
+        android:id="@+id/jokeDashboardActivity"
+        android:name="com.app.jokeappv2.ui.home.JokeDashboardActivity"
+        android:label="activity_joke_dashboard"
+        tools:layout="@layout/activity_joke_dashboard" >
+        <action
+            android:id="@+id/action_jokeDashboardActivity_to_jokeSavedActivity"
+            app:destination="@id/jokeSavedActivity" />
+    </activity>
+    <activity
+        android:id="@+id/jokeSavedActivity"
+        android:name="com.app.jokeappv2.ui.saved.JokeSavedActivity"
+        android:label="JokeSavedActivity" />
+</navigation>

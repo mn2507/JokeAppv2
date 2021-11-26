@@ -1,14 +1,19 @@
 package com.app.jokeappv2.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.jokeappv2.base.BaseActivity
 import com.app.jokeappv2.data.response.Jokes
 import com.app.jokeappv2.data.response.JokesResponseBody
 import com.app.jokeappv2.ui.groupieitem.JokeListItem
+import com.app.jokeappv2.ui.saved.JokeSavedActivity
 import com.app.jokeappv2.utils.Constant
 import com.example.jokeappv2.R
 import com.example.jokeappv2.databinding.ActivityJokeDashboardBinding
@@ -28,7 +33,7 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
         super.onCreate(savedInstanceState)
         binding = ActivityJokeDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = JokeDashboardPresenter();
+        presenter = JokeDashboardPresenter()
         presenter.attachView(this)
 
         setupRecyclerView()
@@ -36,6 +41,9 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
         binding.apply {
             fabRefresh.setOnClickListener {
                 presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
+            }
+            fabSave.setOnClickListener {
+                startActivity(Intent(this@JokeDashboardActivity, JokeSavedActivity::class.java))
             }
             // Check Any by default
             tbgCategory.check(R.id.lt_any)
@@ -64,12 +72,24 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
                     }
                 }
                 if (checkedId != R.id.lt_any) {
-                    tbgCategory.check(R.id.lt_any,false)
+                    tbgCategory.check(R.id.lt_any, false)
                 }
                 presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
             }
         }
     }
+
+//    override fun onStart() {
+//        super.onStart()
+//        binding.fabSave.setOnClickListener {
+//            val navHostFragment =
+//                supportFragmentManager.findFragmentById(R.id.navigation_host) as NavHostFragment
+//            val navController: NavController = navHostFragment.navController
+//            val action = JokeDashboardActivityDirections.actionJokeDashboardActivityToJokeSavedActivity()
+//            it.findNavController().navigate(action)
+//
+//        }
+//    }
 
     private fun setSelectedCategoryName(jokeCategory: String, isSelected: Boolean) {
         if (isSelected) {
