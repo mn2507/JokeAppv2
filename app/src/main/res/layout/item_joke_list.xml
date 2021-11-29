@@ -9,6 +9,7 @@
         android:id="@+id/cl_joke"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -34,5 +35,17 @@
             app:layout_constraintTop_toBottomOf="@id/tv_joke_setup"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_save_joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_joke"
+        android:text="SAVE"
+        android:paddingVertical="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#4885FF"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

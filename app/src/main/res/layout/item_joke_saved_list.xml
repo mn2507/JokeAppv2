@@ -43,8 +43,8 @@
         android:text="DELETE"
         android:paddingVertical="5dp"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/cl_joke"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="#D10303" />
 
