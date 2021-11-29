@@ -8,7 +8,7 @@ import androidx.room.*
 @Dao
 interface JokeSaveObject {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun saveJoke(handler: JokeSaveModel)
+    fun saveJoke(jokeSaveModel: JokeSaveModel)
 
     @Query("select * from saved_jokes where setup=:setup and delivery=:delivery")
     fun checkJokes(setup: String, delivery: String): String
@@ -20,8 +20,8 @@ interface JokeSaveObject {
     fun getSavedJokes(): List<JokeSaveModel>
 
     @Update
-    fun editJoke(handler: JokeSaveModel)
+    fun editJoke(jokeSaveModel: JokeSaveModel)
 
     @Delete
-    fun deleteSavedJoke(handler: JokeSaveModel): Int
+    fun deleteSavedJoke(jokeSaveModel: JokeSaveModel): Int
 }

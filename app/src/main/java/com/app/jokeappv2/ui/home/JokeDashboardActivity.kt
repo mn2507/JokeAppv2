@@ -3,24 +3,16 @@ package com.app.jokeappv2.ui.home
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.jokeappv2.base.BaseActivity
 import com.app.jokeappv2.data.response.Jokes
-import com.app.jokeappv2.data.response.JokesResponseBody
+import com.app.jokeappv2.ui.add.JokeAddActivity
 import com.app.jokeappv2.ui.groupieitem.JokeListItem
-import com.app.jokeappv2.ui.saved.JokeSavedActivity
 import com.app.jokeappv2.utils.Constant
 import com.example.jokeappv2.R
 import com.example.jokeappv2.databinding.ActivityJokeDashboardBinding
-import com.fasterxml.jackson.databind.ser.Serializers
 import com.xwray.groupie.GroupieAdapter
 import com.xwray.groupie.Section
-import javax.inject.Inject
 
 class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
     lateinit var presenter: JokeDashboardPresenter
@@ -42,8 +34,8 @@ class JokeDashboardActivity : BaseActivity(), JokeDashboardMvpView {
             fabRefresh.setOnClickListener {
                 presenter.getMultiAnyJoke(filteredCategory, 5, Constant.JokeType.TWOPART)
             }
-            fabSave.setOnClickListener {
-                startActivity(Intent(this@JokeDashboardActivity, JokeSavedActivity::class.java))
+            fabViewSaved.setOnClickListener {
+                startActivity(Intent(this@JokeDashboardActivity, JokeAddActivity::class.java))
             }
             // Check Any by default
             tbgCategory.check(R.id.lt_any)
