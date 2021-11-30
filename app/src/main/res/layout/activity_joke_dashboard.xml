@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Any"
             />
 
@@ -44,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Programming"
             />
 
@@ -52,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Misc"
             />
 
@@ -60,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Dark"
             />
 
@@ -68,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Pun"
             />
 
@@ -76,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Spooky"
             />
 
@@ -84,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tbgMarkerColor="@color/purple_500"
+            android:textColor="?android:textColorPrimary"
             android:text="Christmas"
             />
     </com.nex3z.togglebuttongroup.MultiSelectToggleGroup>
