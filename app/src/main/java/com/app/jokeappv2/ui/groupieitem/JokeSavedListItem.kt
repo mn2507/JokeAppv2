@@ -71,6 +71,7 @@ class JokeSavedListItem(
         // Create viewGroup
         val layout = LinearLayout(mContext)
         layout.orientation = LinearLayout.VERTICAL
+        layout.setPadding(50,10,50,10)
 
         // Set setup edit text box
         val inputSetup = EditText(mContext)
